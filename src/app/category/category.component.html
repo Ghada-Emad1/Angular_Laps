@@ -1,0 +1,16 @@
+
+
+<div class="border  p-5 h-[50vh] flex justify-center m-10 gap-5 rounded-lg">
+  @for(category of categories; track category.id; let i=$index){
+  <div class="border rounded-lg  w-[500px] border-amber-700 flex flex-col items-center gap-2">
+     <img class="w-full h-50 object-cover" [src]="category.image" alt="">
+        <ul class="flex gap-4">
+          <h5>Price of category {{i+1}} </h5>
+            @for(price of category.prices;track price){
+                <li>{{price}} $</li>
+            }
+        </ul>
+  </div>
+
+  }
+</div>
