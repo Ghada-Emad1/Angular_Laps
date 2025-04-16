@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { Product } from '../product';
+import { RouterOutlet } from '@angular/router';
+import { ProductCardComponent } from '../product-card/product-card.component';
 
 @Component({
   selector: 'app-product',
-  imports: [],
+  imports: [RouterOutlet,ProductCardComponent],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css',
 })

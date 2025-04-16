@@ -1,0 +1,17 @@
+ <div class="border p-5 h-[50vh] flex justify-center m-10 gap-5 rounded">
+ @for(product of products; track product.id){
+  <div class="border rounded-lg  w-[500px] border-amber-700 flex flex-col gap-2 justify-start items-center">
+    <img class="w-full h-50 object-cover" [src]="product.image" alt="" />
+    <h4>Product Name : {{ product.productName }}</h4>
+    <p class="text-lg"> Price : {{ product.productPrice }}$</p>
+    <ul class="flex gap-4">
+      <h5>Scales are</h5>
+      @for(scale of product.onScale;track scale){
+      <li>{{ scale }}</li>
+      }
+    </ul>
+  </div>
+
+  }
+ </div>
+
