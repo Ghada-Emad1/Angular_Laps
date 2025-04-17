@@ -1,4 +1,41 @@
-<div >
-  <app-product-card [products]="Products"  ></app-product-card>
+<div class="">
+  <div class="flex justify-end mr-35">
+    <select
+      id="category"
+      (change)="filterByCategory($event.target)"
+      class="border border-gray-300 rounded-lg shadow-sm w-[250px] p-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:border-yellow-600 transition"
+    >
+      <option value="" disabled selected>Select a category</option>
+      <option value="men's clothing">Men's Clothing</option>
+      <option value="jewelery">Jewelery</option>
+      <option value="electronics">Electronics</option>
+      <option value="women's clothing">Women's Clothing</option>
+    </select>
+  </div>
+  @if(currentPath==='/product'){
+  <div>
+    <h1 class="font-bold text-center text-green-700">Filter Products</h1>
+  </div>
+
+  <app-product-card [products]="filterProducts"></app-product-card>
+
+  @defer(on viewport){
+  <h1 class="font-bold text-center [color:green]">All Products</h1>
+  <app-product-card [products]="Products"></app-product-card>
+  }@placeholder(minimum 5s){
+  <div class="flex items-center justify-center h-screen">
+    <div
+      class="w-12 h-12 border-4 border-dashed rounded-full animate-spin border-yellow-500"
+    ></div>
+  </div>
+
+  } }@else {
+     <div>
+    <h1 class="font-bold text-center text-green-700">Filter Products</h1>
+  </div>
+
+  <app-product-card [products]="filterProducts"></app-product-card>
+
+  }
 </div>
-<router-outlet/>
+<router-outlet />

@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
-   image:string='fruits.avif'
+   image:string='shopping.avif'
 }
